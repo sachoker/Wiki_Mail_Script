@@ -42,6 +42,7 @@ def check_for_new_deaths(sender, login, password, server, recipient, timer):
         diff = set(current) - set(before)
         if len(diff) > 0:
             send_emails(sender, login, password, server, recipient, diff)
+        before = current
         time.sleep(int(timer))
 
 
